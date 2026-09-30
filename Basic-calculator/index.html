@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Basic Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            background-color: #f2f2f2;
+        }
+
+        .calculator {
+            width: 300px;
+            margin: 40px auto;
+            padding: 25px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .calculator input {
+            width: 90%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+        }
+
+        .calculator button {
+            padding: 10px 18px;
+            margin: 8px 4px;
+            border: none;
+            border-radius: 6px;
+            background-color: #333;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+       .calculator button:hover {
+        background-color: #555;
+       }
+
+       h1 {
+        margin-top: 40px;
+        font-size: 32px;
+       }
+       
+
+    </style>
+</head>
+
+<body>
+    <h1>Basic Calculator</h1>
+
+    <div class="calculator">
+        <input type="text" id="number1" placeholder="Enter first number">
+        <input type="text" id="number2" placeholder="Enter second number">
+        <button onclick="calculate('add')">Add</button>
+        <button onclick="calculate('subtract')">Subtract</button>
+        <button onclick="calculate('multiply')">Multiply</button>
+        <button onclick="calculate('divide')">Divide</button>
+
+        <div id="result"></div>
+
+    </div>
+
+    <script>
+
+        function calculate(operation) {
+            const number1Input = document.getElementById("number1");
+            const number1 = parseFloat(number1Input.value);
+
+            const number2Input = document.getElementById("number2");
+            const number2 = parseFloat(number2Input.value);
+
+            let result;
+
+            if (isNaN(number1) || isNaN(number2)) {
+                result = "Please enter valid numbers.";
+            } else {
+                switch (operation) { 
+                    case "add":
+                        result = `${number1} + ${number2} = ${number1 + number2}`;
+                        break;
+                    
+                    case "subtract":
+                        result = `${number1} - ${number2} = ${number1 - number2}`;
+                        break;
+
+                    case "multiply":
+                        result = `${number1} * ${number2} = ${number1 * number2}`;
+                        break;
+
+                    case "divide":
+                        if (number2 === 0) {
+                            result = "Division by zero is not allowed.";
+                        } else {
+                        result = `${number1} / ${number2} = ${number1 / number2}`;
+                        } break;
+                
+                    
+
+                } document.getElementById("result").innerText = result;
+            }
+        }
+
+    </script>
+
+</body>
+</html>

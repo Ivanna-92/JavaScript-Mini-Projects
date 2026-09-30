@@ -1,0 +1,27 @@
+body {
+    background-color: beige;
+    color: rgb(18, 17, 17);
+    font-family: Arial, sans-serif;
+    padding: 30px;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+p {
+    padding: 10px;
+    border: 1px solid gray;
+}
+.dark-mode {
+    background-color: rgb(18, 17, 17);
+    color: beige;
+}
+
+.dark-mode p {
+    border-color: beige;
+}

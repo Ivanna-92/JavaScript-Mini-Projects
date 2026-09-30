@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Array Methods Project</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <div class="app">
+        <h1>Array Methods</h1>
+
+        <div id="arrayElements"></div>
+
+    <div class="controls">
+
+        <input type="text" id="elementInput" placeholder="Enter an element" onkeydown="checkEnter(event)">
+
+        <button onclick="addElement()">Add Element</button>
+        <button onclick="removeLast()">Remove Last</button>
+        <button onclick="removeFirst()">Remove First</button>
+        <button onclick="addFirst()">Add First</button>
+
+        <input type="number" id="indexInput" placeholder="Enter Index">
+        <button onclick="removeElement()">Remove Element</button>
+    </div>
+    </div>
+        <script src="script.js"></script>
+
+    
+    </body>
+</html>
